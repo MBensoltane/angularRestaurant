@@ -1,0 +1,24 @@
+<table class="table">
+    <thead class="table-info">
+      <tr>
+        <th scope="col">Id facture</th>
+        <th scope="col">Total en €</th>
+        <th scope="col">Au nom de Mme/Mr</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+       
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let f of listeFacture">  
+        <td>{{f.idF}}</td>
+        <td>{{f.prixTotF}}</td>
+        <td>{{f?.commandeF?.reservation?.client?.nomU}} {{f?.commandeF?.reservation?.client?.prenomU}}</td>
+       
+        <td>
+            <a [routerLink]="['/facture/update/'+ f.idF]" class="btn btn-warning"> <i class="fa fa-cogs"> Modifier </i> </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+

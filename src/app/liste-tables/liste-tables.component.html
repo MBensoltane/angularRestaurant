@@ -1,0 +1,29 @@
+<table class="table">
+    <thead class="table-info">
+      <tr>
+        <th scope="col">Id tables</th>
+        <th scope="col">nbre Tables réservées</th>
+        <th scope="col">nbre de places réservées</th>
+        <th scope="col">Reservation au nom de Mme/Mr</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+       
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let t of listeTables">  
+        <td>{{t.idT}}</td>
+        <td>{{t.nbreT}}</td>
+        <td>{{t.nbreP}}</td>
+        <td>{{t?.reservation?.client?.nomU}} {{t?.reservation?.client?.prenomU}}</td>
+        <td style="text-align: right"> 
+            <button type="button" class="btn btn-danger" (click)="deleteTable(t.idT)"> <i class="fa fa-trash-o"> Supprimer </i> </button>
+        </td> 
+        <td>
+            <a [routerLink]="['/tables/update/'+ t.idT]" class="btn btn-warning"> <i class="fa fa-cogs"> Modifier </i> </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+

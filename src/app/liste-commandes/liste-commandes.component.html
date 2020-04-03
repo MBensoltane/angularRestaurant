@@ -1,0 +1,24 @@
+<table class="table">
+    <thead class="table-info">
+      <tr>
+        <th scope="col">Id Commande</th>
+        <th scope="col">Au nom de Mme/Mr</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+       
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let c of listeCommande">  
+        <td>{{c.idCommande}}</td>
+        <td>{{c?.reservation?.client?.nomU}}</td>
+        
+        <td style="text-align: right"> 
+            <button type="button" class="btn btn-danger" (click)="deleteCommande(c.idCommande)"> <i class="fa fa-trash-o"> Supprimer </i> </button>
+        </td> 
+        <td>
+            <a [routerLink]="['/Commande/update/'+c.idCommande]" class="btn btn-warning"> <i class="fa fa-cogs"> Modifier </i> </a>
+        </td>
+    </tr>
+    </tbody>
+</table>

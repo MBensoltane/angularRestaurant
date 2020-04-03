@@ -1,0 +1,28 @@
+.tunis
+{
+position: absolute;
+width : 600px;
+height: 600px;
+}
+.presentation
+{
+    text-align: center;
+    text-align: justify-all;
+    border: groove;
+  background-color: lightgrey;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 100px;
+  margin-left: 700px;
+}
+.contact
+{
+    text-align: center;
+    text-align: justify-all;
+    border: groove;
+  background-color: lightgrey;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 100px;
+  margin-left: 700px;  
+}

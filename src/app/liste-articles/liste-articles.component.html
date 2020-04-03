@@ -1,0 +1,26 @@
+<table class="table">
+    <thead class="table-info">
+      <tr>
+        <th scope="col">Id Article</th>
+        <th scope="col">Nom de l'article</th>
+        <th scope="col">Type d'article</th>
+        <th scope="col">Prix en €</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let art of listeArticles">  
+        <td>{{art.idArticle}}</td>
+        <td>{{art.nomArticle}}</td>
+        <td>{{art.typeArticle}}</td>
+        <td>{{art.prixArticle}}</td>
+        <td style="text-align: right"> 
+            <button type="button" class="btn btn-danger" (click)="deleteArticle(art.idArticle)"> <i class="fa fa-trash-o"> Supprimer </i> </button>
+        </td> 
+        <td>
+            <a [routerLink]="['/article/update/'+ art.idArticle]" class="btn btn-warning"> <i class="fa fa-cogs"> Modifier </i> </a>
+        </td>
+    </tr>
+    </tbody>
+</table>

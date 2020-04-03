@@ -1,0 +1,28 @@
+<table class="table">
+    <thead class="table-info">
+      <tr>
+        <th scope="col">Id ligne de commande</th>
+        <th scope="col">Plat/Boisson</th>
+        <th scope="col">Quantite demandé</th>
+        <th scope="col">Commande de Mme/Mr</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+       
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let lc of listeLC">  
+        <td>{{lc.idLC}}</td>
+        <td>{{lc?.article?.nomArticle}}</td>
+        <td>{{lc.quantite}}</td>
+        <td>{{lc?.commande?.reservation?.client?.nomU}} {{lc?.commande?.reservation?.client?.prenomU}}</td>
+       
+        <td style="text-align: right"> 
+            <button type="button" class="btn btn-danger" (click)="deleteLc(lc.idLC)"> <i class="fa fa-trash-o"> Supprimer </i> </button>
+        </td> 
+        <td>
+            <a [routerLink]="['/lignecommande/update/'+ lc.idLC]" class="btn btn-warning"> <i class="fa fa-cogs"> Modifier </i> </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
