@@ -12,7 +12,7 @@ export class ReservationService {
     return this.http.get<Reservation[]>("http://localhost:8080/Reservation/getReservation").pipe();
       }
   createReservation(reservation : Reservation){
-return this.http.post<Reservation>("http://localhost:8080/Reservation/addreservation",reservation).pipe();
+return this.http.post<Reservation>("http://localhost:8080/Reservation/addReservation",reservation).pipe();
   }
   deleteReservation(idR:number){
     return this.http.delete<Reservation>("http://localhost:8080/Reservation/deleteReservation/"+idR).pipe();

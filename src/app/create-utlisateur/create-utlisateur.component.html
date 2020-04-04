@@ -1,1 +1,32 @@
-<p>create-utlisateur works!</p>
+<div class="container">
+    <h3>Ajouter un utilisateur</h3>
+    <form>
+      <div class="form-group">
+        <label for="name"> Nom : </label>
+        <input name="nomU" type="text" class="form-control" id="nomU" required [(ngModel)]="newU.nomU">
+      </div>
+
+      <div class="form-group">
+        <label for="prenom">Prenom utilisateur:</label>
+        <input name="prenomU" type="text" class="form-control" id="prenomU" [(ngModel)]="newU.prenomU">
+      </div>
+      <div class="form-group">
+        <label for="telephone">Numéro de Telephone:</label>
+        <input name="telephoneU" type="text" class="form-control" id="telephoneU" [(ngModel)]="newU.telephoneU">
+      </div>
+      <div class="form-group">
+        <label for="telephone">Adresse domicile :</label>
+        <input name="telephoneU" type="text" class="form-control" id="adresseU" [(ngModel)]="newU.adresseU">
+      </div>
+      <div class="form-group">
+        <label> Role :</label>
+        <select class="custom-select" id="roleU" name="roleU" [(ngModel)]="newU.role" required>
+        <option *ngFor="let l of ListeRole" [ngValue]="l">{{l.nomRole}}</option>
+       </select>
+      </div>
+
+      <button type="submit" (click) ="createUtilisateur()" class="btn btn-success">Enregistrer</button>
+
+    </form>
+</div>
+

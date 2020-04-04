@@ -19,6 +19,31 @@
         <td>
             <a [routerLink]="['/Commande/update/'+c.idCommande]" class="btn btn-warning"> <i class="fa fa-cogs"> Modifier </i> </a>
         </td>
+        <td style="text-align: right"> 
+          <button type="button" class="btn btn-danger" (click)="afficheDetailCommande(c.idCommande)"> <i class="fa fa-trash-o"> Detail commande </i> </button>
+      </td> 
     </tr>
     </tbody>
 </table>
+
+<table class="table">
+  <thead class="table-info">
+    <tr>
+      <th scope="col">Ligne commande</th>
+      <th scope="col">Article</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+     
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor = "let ligne of listeLigne">  
+      <td>{{ligne.idLC}}</td>
+      <td>{{ligne.article.nomArticle}}</td>
+      <td>{{ligne.article.prixArticle}}</td>
+      <td>{{ligne.article.nomArticle}}</td>
+  </tr>
+  </tbody>
+</table>
+
+

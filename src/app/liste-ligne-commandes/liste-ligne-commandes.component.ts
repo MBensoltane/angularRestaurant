@@ -35,7 +35,7 @@ listeCommande : Commande[];
     )
    
   }
-  deleteCommande(idLC : number){
+  deleteLc(idLC : number){
     this.lCService.deleteLc(idLC).subscribe (
       data => {
         console.log(data);

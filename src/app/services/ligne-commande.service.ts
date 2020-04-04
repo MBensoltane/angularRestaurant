@@ -23,4 +23,7 @@ return this.http.post<LigneCommande>("http://localhost:8080/Lc/addLC",Lc).pipe()
   updateLc(idLC:number,Lc : LigneCommande ){
     return this.http.post<LigneCommande>("http://localhost:8080/Lc/updateLC/"+idLC,Lc).pipe();
   }
+  afficheDetailCommande(idCommande:number){
+    return this.http.get<LigneCommande[]>("http://localhost:8080/Lc/details/"+idCommande).pipe();
+  }
 }

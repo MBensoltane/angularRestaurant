@@ -9,6 +9,9 @@ import { ListeCommandesComponent } from './liste-commandes/liste-commandes.compo
 import { ListeLigneCommandesComponent } from './liste-ligne-commandes/liste-ligne-commandes.component';
 import { ListeFacturesComponent } from './liste-factures/liste-factures.component';
 import { ListeTablesComponent } from './liste-tables/liste-tables.component';
+import { CreateUtlisateurComponent } from './create-utlisateur/create-utlisateur.component';
+import { CreateRoleComponent } from './create-role/create-role.component';
+import { CreateReservationComponent } from './create-reservation/create-reservation.component';
 
 
 const routes: Routes = [
@@ -51,6 +54,18 @@ const routes: Routes = [
     path : 'tables/all',
     component : ListeTablesComponent
   },
+  {
+    path : 'utlisateur/addU',
+    component : CreateUtlisateurComponent
+  },
+  {
+    path : 'role/addRole',
+    component : CreateRoleComponent
+  },
+  {
+    path : 'reservation/addreservation',
+    component : CreateReservationComponent
+  }
 ];
 
 

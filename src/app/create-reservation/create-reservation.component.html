@@ -1,0 +1,42 @@
+
+<div class="container">
+    <h3>Effectuer une réservation </h3>
+    <form>
+      <div class="form-group">
+        <label for="name"> Date de reservation : </label>
+        <input name="dateR" type="date" class="form-control" id="dateR" required [(ngModel)]="newReservation.dateR">
+      </div>
+
+      <div class="form-group">
+        <label for="prenom">Heure de reservation :</label>
+        <input name="heureR" type="time" class="form-control" id="heureR" [(ngModel)]="newReservation.heureR">
+      </div>
+      <div class="form-group">
+        <label for="telephone">Nombre de personnes:</label>
+        <input name="nbrePersonne" type="number" class="form-control" id="nbrePersonne" [(ngModel)]="newReservation.nbrePersonne">
+      </div>
+      <div class="form-group">
+        <label> Au nom de Mme/Mr :</label>
+        <select class="custom-select" id="client" name="client" [(ngModel)]="newReservation.client" required>
+        <option *ngFor="let r of listeUtilisateur" [ngValue]="r">Mme/Mr: {{r.nomU}} {{r.prenomU}} - {{r.role.nomRole}} </option>
+       </select>
+      </div>
+       <div class="form-group">
+        <label> chargé par le Manager :</label>
+        <select class="custom-select" id="manager" name="manager" [(ngModel)]="newReservation.utilisateurManager" required>
+        <option *ngFor="let r of listeUtilisateur" [ngValue]="r">Mme/Mr: {{r.nomU}} {{r.prenomU}} - {{r.role.nomRole}} </option>
+       </select>
+      </div>
+
+      <div class="form-group">
+        <label> Occupé par le serveur :</label>
+        <select class="custom-select" id="serveur" name="serveur" [(ngModel)]="newReservation.serveur" required>
+        <option *ngFor="let r of listeUtilisateur" [ngValue]="r"> Mme/Mr: {{r.nomU}} {{r.prenomU}} - {{r.role.nomRole}}</option>
+       </select>
+      </div>
+
+      <button type="submit" (click) ="createReservation()" class="btn btn-success">Valider la reservation</button>
+
+    </form>
+</div>
+

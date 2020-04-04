@@ -17,6 +17,13 @@ import { ListeLigneCommandesComponent } from './liste-ligne-commandes/liste-lign
 import { ListeArticlesComponent } from './liste-articles/liste-articles.component';
 import { ListeFacturesComponent } from './liste-factures/liste-factures.component';
 import { CreateUtlisateurComponent } from './create-utlisateur/create-utlisateur.component';
+import { CreateRoleComponent } from './create-role/create-role.component';
+import { CreateReservationComponent } from './create-reservation/create-reservation.component';
+import { CreateCommandeComponent } from './create-commande/create-commande.component';
+import { CreateFactureComponent } from './create-facture/create-facture.component';
+import { CreateLigneCommandeComponent } from './create-ligne-commande/create-ligne-commande.component';
+import { CreateArticleComponent } from './create-article/create-article.component';
+import { DetailCommandeComponent } from './detail-commande/detail-commande.component';
 
 
 @NgModule({
@@ -32,7 +39,14 @@ import { CreateUtlisateurComponent } from './create-utlisateur/create-utlisateur
     ListeLigneCommandesComponent,
     ListeArticlesComponent,
     ListeFacturesComponent,
-    CreateUtlisateurComponent
+    CreateUtlisateurComponent,
+    CreateRoleComponent,
+    CreateReservationComponent,
+    CreateCommandeComponent,
+    CreateFactureComponent,
+    CreateLigneCommandeComponent,
+    CreateArticleComponent,
+    DetailCommandeComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,8 @@ import { Commande } from '../models/commande';
 import { Reservation } from '../models/reservation';
 import { CommandeService } from '../services/commande.service';
 import { ReservationService } from '../services/reservation.service';
+import { LigneCommandeService } from '../services/ligne-commande.service';
+import { LigneCommande } from '../models/ligneCommande';
 
 @Component({
   selector: 'app-liste-commandes',
@@ -11,8 +13,9 @@ import { ReservationService } from '../services/reservation.service';
 })
 export class ListeCommandesComponent implements OnInit {
 listeCommande : Commande[];
+listeLigne : LigneCommande[];
 listeReservation : Reservation[];
-  constructor(private comService: CommandeService, private reservationService : ReservationService) { }
+  constructor(private lCService:LigneCommandeService ,private comService: CommandeService, private reservationService : ReservationService) { }
 
   ngOnInit(): void {
 this.comService.getListeCommandes().subscribe(
@@ -32,6 +35,16 @@ this.comService.getListeCommandes().subscribe(
         data => {
           console.log(data);
           window.location.href='commande/all'
+        }
+      )
+    }
+
+    afficheDetailCommande(idCommande:number){
+      this.lCService.afficheDetailCommande(idCommande).subscribe(
+        data =>{
+          this.listeLigne=data;
+          console.log(data)
+    console.log("afffichage réussi")
         }
       )
     }

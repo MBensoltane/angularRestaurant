@@ -1,0 +1,12 @@
+<div class="container">
+    <h4>Ajouter un Rôle</h4>
+    <form>
+      <div class="form-group">
+        <label for="name"> Role : </label>
+        <input name="nomR" type="text" class="form-control" id="nomR"  placeholder="veuillez entrer un nouveau role" required [(ngModel)]="newRole.nomRole">
+      </div>
+
+      <button type="submit" (click) ="createRole()" class="btn btn-success">Enregistrer</button>
+
+    </form>
+</div>
